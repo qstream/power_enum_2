@@ -130,7 +130,7 @@ module PowerEnum
 
           before_save :enumeration_model_update
           before_destroy :enumeration_model_update
-          validates acts_enumerated_name_column, :presence => true, :uniqueness => true
+          validates acts_enumerated_name_column, :presence => true, :uniqueness => {:case_sensitive => false}
           validate :validate_enumeration_model_updates_permitted
 
           define_method :__enum_name__ do
